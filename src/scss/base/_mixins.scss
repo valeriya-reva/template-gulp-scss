@@ -258,16 +258,3 @@ $animation-speed: .3s !default;
   font-size: ($pxSize / 10px) + rem;
 }
 
-
-// Using
-//.div {
-//   @include media_tablet {
-//       @content;
-//   }
-//}
-//media_mixin.scss
-@mixin media_tablet {
-    @media (max-width: $tablet) {
-        @content;
-    }
-}
