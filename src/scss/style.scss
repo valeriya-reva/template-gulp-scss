@@ -1,0 +1,115 @@
+$breakpoints: (
+        'xs-phone': 320px,
+        'phone': 480px,
+        'tablet': 768px,
+        'desktop': 1024px,
+        'widescreen': 1200px
+);
+
+// keywords
+$media-expressions: (
+        'screen': 'screen',
+        'print': 'print',
+        'handheld': 'handheld',
+        'landscape': '(orientation: landscape)',
+        'portrait': '(orientation: portrait)',
+        'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+        'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);
+
+
+@import 'base/reset';
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/typography';
+@import 'base/forms';
+@import 'base/grid';
+@import 'base/animate';
+@import 'libs/animate';
+
+@import 'pages/home';
+
+@import 'components/header';
+@import 'components/footer';
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  background: $gray;
+}
+
+.thumbnail {
+  width: 100vw;
+  display: inline-block;
+}
+
+.animated.standby {
+  -webkit-animation: none !important;
+  -o-animation: none !important;
+  animation: none !important;
+  visibility: hidden;
+}
+
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../../build/fonts/icomoon.eot?j6t7bg');
+  src:  url('../fonts/icomoon.eot?j6t7bg#iefix') format('embedded-opentype'),
+  url('../fonts/icomoon.ttf?j6t7bg') format('truetype'),
+  url('../fonts/icomoon.woff?j6t7bg') format('woff'),
+  url('../fonts/icomoon.svg?j6t7bg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone:before {
+  content: "\e942";
+}
+.icon-envelop:before {
+  content: "\e945";
+}
+.icon-facebook:before {
+  content: "\ea90";
+}
+.icon-instagram:before {
+  content: "\ea92";
+}
+.icon-youtube2:before {
+  content: "\ea9e";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.test {
+  @include rem-font-size(14px);
+  @include media_tablet {
+    @include rem-font-size(28px);
+  }
+}
+
